@@ -60,7 +60,7 @@ public class PersonController {
 	@PostMapping("/person-service/persons")
 	private ResponseEntity<Person> savePerson(@Valid @RequestBody Person person) {
 		personService.savePerson(person);
-		return new ResponseEntity<Person>(person, HttpStatus.OK);
+		return new ResponseEntity<Person>(person, HttpStatus.CREATED);
 
 	}
 
