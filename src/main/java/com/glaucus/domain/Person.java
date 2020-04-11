@@ -41,7 +41,7 @@ public class Person {
 	private ZonedDateTime creationTime;
 	private ZonedDateTime lastModified;
 	
-	@Relationship(type="lastname",direction=Relationship.UNDIRECTED)
+	@Relationship(type="lastname",direction=Relationship.TYPE)
 	private List<Person> personList=new ArrayList<>();
 		
 	public List<Person> getPersons() {

@@ -50,6 +50,7 @@ public class PersonService {
 				person.setLastname(lastname);
 				person.setPersons(person);
 				List<Person> personsWithMatchingLastName = getMatchingPersonsByLastName(lastname);
+				personsWithMatchingLastName.add(person);
 				personRepo.saveAll(personsWithMatchingLastName);
 			}
 		}
