@@ -1,4 +1,4 @@
-package com.glaucus;
+package com.parking;
 
 
 import org.springframework.boot.SpringApplication;
@@ -9,10 +9,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 @EnableNeo4jRepositories
 @SpringBootApplication
-public class PersonApplication {
+public class ParkingApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PersonApplication.class, args);
+		SpringApplication.run(ParkingApplication.class, args);
 	}
 
 }

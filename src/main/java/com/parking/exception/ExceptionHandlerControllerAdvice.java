@@ -1,7 +1,7 @@
 /**
  *  @author arvind verma
  */
-package com.glaucus.exception;
+package com.parking.exception;
 
 import javax.servlet.http.HttpServletRequest;
 

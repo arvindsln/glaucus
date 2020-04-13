@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.glaucus.exception;
+package com.parking.exception;
 
 /**
  * @author arvind verma

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.glaucus.exception;
+package com.parking.exception;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 /**
