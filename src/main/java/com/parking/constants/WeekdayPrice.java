@@ -8,7 +8,7 @@ package com.parking.constants;
  *
  */
 public enum WeekdayPrice {
-	SEVEN(7), TEN(10), FIFTEEN(15),TWENTYTWO(22),THIRTY(30);
+	SEVEN(2), TEN(5), FIFTEEN(10),TWENTYTWO(15),THIRTY(24);
 
     private final long hour;
 
@@ -25,4 +25,10 @@ public enum WeekdayPrice {
         return found;
     }
     
+    public static void main(String args[])
+	{
+		System.out.println(getPrice(3));
+	}
 }
+
+

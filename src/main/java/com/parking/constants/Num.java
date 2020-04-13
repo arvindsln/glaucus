@@ -26,9 +26,6 @@ public enum Num {
 		return val;
 	}
 
-	public static void main(String args[])
-	{
-		System.out.println(getValue(FIVE.toString()));
-	}
+	
 	
 }

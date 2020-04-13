@@ -25,7 +25,7 @@ public class ParkingService {
 
 	@Autowired
 	ParkingRepository parkingRepo;
-	Logger logger = LoggerFactory.getLogger(ParkingService.class);
+	static Logger logger = LoggerFactory.getLogger(ParkingService.class);
 
 	public int getTotalAmount(LocalDateTime entryTime,LocalDateTime exitTime) {
 		
@@ -53,7 +53,16 @@ public class ParkingService {
                 exitTime.getMonthValue(), exitTime.getDayOfMonth(), entryTime.getHour(), entryTime.getMinute(), entryTime.getSecond());
         Duration duration = Duration.between(today, exitTime);
 
-        long hours = duration.toHours();
+        logger.info("duration.toMinutes()--"+duration.toMinutes());
+        long remainder=duration.toMinutes()%60;
+        
+        logger.info("remainder--"+remainder);
+        long hours = duration.toMinutes()/60;
+        
+        if(remainder>0)
+        {
+        	hours=hours+1;
+        }
         
         return hours;
 }
