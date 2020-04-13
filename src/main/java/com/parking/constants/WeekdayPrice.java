@@ -2,33 +2,34 @@
  * 
  */
 package com.parking.constants;
-
+import java.util.Arrays;
 /**
  * @author arvind verma
  *
  */
+
 public enum WeekdayPrice {
-	SEVEN(2), TEN(5), FIFTEEN(10),TWENTYTWO(15),THIRTY(24);
 
-    private final long hour;
+ SEVEN(0,2), TEN(3,5), FIFTEEN(6,10),TWENTYTWO(11,15),THIRTY(16,24);
 
-    private WeekdayPrice(long hour) {
-        this.hour = hour;
+    private final long min;
+    private final long max;
+
+    private WeekdayPrice(long min, long max) {
+        this.min = min;
+        this.max = max;
     }
 
-    public static WeekdayPrice getPrice(long hour) {
-    	WeekdayPrice found = SEVEN;
-        for (WeekdayPrice w : values())
-            if (w.hour <= hour)
-                found = w;
-
-        return found;
+    public String getRangeAccount() {
+        return String.format("%d,%d", min, max);
     }
-    
-    public static void main(String args[])
-	{
-		System.out.println(getPrice(3));
-	}
-}
 
+    public static WeekdayPrice getPrice(long val) {
+        return Arrays.stream(values())
+                     .filter(r -> val >= r.min && val <= r.max)
+                     .findFirst()
+                     .orElse(null);
+    }
+
+ }
 

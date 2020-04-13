@@ -3,25 +3,33 @@
  */
 package com.parking.constants;
 
+import java.util.Arrays;
+
+
 /**
  * @author arvind verma
  *
  */
 public enum WeekendPrice {
-	FIVE(2), EIGHT(5), TWELVE(10),EIGHTEEN(15),TWENTYFIVE(24);
+	FIVE(0,2), EIGHT(3,5), TWELVE(6,10),EIGHTEEN(11,15),TWENTYFIVE(16,24);
 
-    private final long hour;
+	private final long min;
+    private final long max;
 
-    private WeekendPrice(long hour) {
-        this.hour = hour;
+    private WeekendPrice(long min, long max) {
+        this.min = min;
+        this.max = max;
     }
 
-    public static WeekendPrice getPrice(long hour) {
-    	WeekendPrice found = FIVE;
-        for (WeekendPrice w : values())
-            if (w.hour <= hour)
-                found = w;
+    public String getRangeAccount() {
+        return String.format("%d,%d", min, max);
+    }
 
-        return found;
-    }  
-}
+    public static WeekendPrice getPrice(long val) {
+        return Arrays.stream(values())
+                     .filter(r -> val >= r.min && val <= r.max)
+                     .findFirst()
+                     .orElse(null);
+    }
+    
+  }
