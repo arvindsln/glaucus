@@ -8,11 +8,11 @@
 		<version>2.2.3.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.glaucus</groupId>
-	<artifactId>person</artifactId>
+	<groupId>com.parking</groupId>
+	<artifactId>parking-price</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>person</name>
-	<description>person project for Spring Boot</description>
+	<name>parking-price</name>
+	<description>parking-price project for Spring Boot</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -22,11 +22,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-neo4j</artifactId>
-		</dependency>
-		<dependency>
-		    <groupId>org.neo4j</groupId>
-		    <artifactId>neo4j-ogm-bolt-driver</artifactId>
-		    <version>3.2.10</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
